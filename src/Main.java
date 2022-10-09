@@ -183,9 +183,9 @@ public class Main {
                                 for (Student student : students) {
                                     student.setApplication(0);
                                     student.saveToFile();
-                                    System.out.println("All applications are reset");
-                                    Waiter.waiter();
                                 }
+                                System.out.println("All applications are reset");
+                                Waiter.waiter();
                             } else if (choice == 3) {
                                 System.out.println("1. Add User");
                                 System.out.println("2. Delete User");
@@ -311,6 +311,7 @@ public class Main {
                             String name = scanner.next();
                             if (new File("Users\\" + name + ".txt").exists() && new Scanner(new File("Users\\" + name + ".txt")).next().equals("1")) {
                                 Student student = new Student(name);
+                                student.getFromFile();
                                 if (student.getApplication() == 2) {
                                     System.out.println("Approved");
                                     Waiter.waiter();
