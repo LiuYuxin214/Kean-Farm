@@ -12,13 +12,13 @@ public class Maker {
         int numberOfGuards = sc.nextInt();
         System.out.print("Password: ");
         String password = sc.next();
-        for (int i = 0; i < numberOfStudents; i++) {
-            new Student("student" + i, password).saveToFile();
+        for (int i = 1; i <= numberOfStudents; i++) {
+            new Student("stu" + i, password).saveToFile();
         }
-        for (int i = 0; i < numberOfAdministrators; i++) {
+        for (int i = 1; i <= numberOfAdministrators; i++) {
             new Administrator("admin" + i, password).saveToFile();
         }
-        for (int i = 0; i < numberOfGuards; i++) {
+        for (int i = 1; i <= numberOfGuards; i++) {
             new Guard("guard" + i, password).saveToFile();
         }
         System.out.println("Done!");
