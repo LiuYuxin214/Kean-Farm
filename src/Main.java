@@ -197,16 +197,16 @@ public class Main {
                                     String newUsername = scanner.next();
                                     System.out.print("Enter the password: ");
                                     String newPassword = scanner.next();
-                                    System.out.print("Enter the class id: ");
-                                    int newClassId = scanner.nextInt();
-                                    if (newClassId == 1) {
+                                    System.out.print("Enter the class (1=Student 2=Administrator 3=Guard): ");
+                                    int newClass = scanner.nextInt();
+                                    if (newClass == 1) {
                                         Student student = new Student(newUsername, newPassword);
                                         student.saveToFile();
-                                    } else if (newClassId == 2) {
+                                    } else if (newClass == 2) {
                                         Administrator administrator1 = new Administrator(newUsername, newPassword);
                                         administrator1.saveToFile();
 
-                                    } else if (newClassId == 3) {
+                                    } else if (newClass == 3) {
                                         Guard guard = new Guard(newUsername, newPassword);
                                         guard.saveToFile();
                                     }
@@ -269,7 +269,7 @@ public class Main {
                                     if (userFile.exists()) {
                                         System.out.print("Enter the new password: ");
                                         String newPassword = scanner.next();
-                                        System.out.print("Enter the new class id: ");
+                                        System.out.print("Enter the new class (1=Student 2=Administrator 3=Guard): ");
                                         int newClassId = scanner.nextInt();
                                         if (newClassId == 1) {
                                             Student student = new Student(editUsername, newPassword);
